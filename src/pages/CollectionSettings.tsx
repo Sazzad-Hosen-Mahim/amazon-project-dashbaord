@@ -284,7 +284,7 @@ const CollectionSettings = () => {
                   <TableHead className="w-[100px]">PID</TableHead>
                   <TableHead>Product Name</TableHead>
                   <TableHead className="w-[180px]">Custom Price ($)</TableHead>
-                  <TableHead className="w-[180px]">Commission ($)</TableHead>
+                  <TableHead className="w-[180px]">Commission (%)</TableHead>
                   <TableHead className="text-right px-6">Action</TableHead>
                 </TableRow>
               </TableHeader>
