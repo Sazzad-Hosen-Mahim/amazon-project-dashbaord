@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { 
-  Pencil, 
-  Trash2, 
-  Loader2, 
-  Plus, 
-  Search, 
-  RotateCcw, 
+import {
+  Pencil,
+  Trash2,
+  Loader2,
+  Plus,
+  Search,
+  RotateCcw,
   Image as ImageIcon,
   MoreVertical,
   Calendar,
@@ -39,11 +39,11 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
-import { 
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger 
+  DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
 import { format } from "date-fns";
 
@@ -106,7 +106,7 @@ const ProductList = () => {
         introduction: formData.introduction,
         poster: formData.poster,
       }).unwrap();
-      
+
       toast.success("Product created successfully!");
       closeModal();
     } catch (err: any) {
@@ -188,7 +188,7 @@ const ProductList = () => {
           <h1 className="text-3xl font-bold tracking-tight">Product Management</h1>
           <p className="text-muted-foreground mt-1">Manage your Amazon product catalog, updates, and listings.</p>
         </div>
-        <Button 
+        <Button
           onClick={openAdd}
           className="bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20 transition-all active:scale-95"
         >
@@ -202,9 +202,9 @@ const ProductList = () => {
           <Label htmlFor="searchId" className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Product ID</Label>
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input 
+            <Input
               id="searchId"
-              placeholder="Search by ID..." 
+              placeholder="Search by ID..."
               className="pl-9 h-11"
               value={searchProductId}
               onChange={(e) => setSearchProductId(e.target.value)}
@@ -215,9 +215,9 @@ const ProductList = () => {
           <Label htmlFor="searchName" className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Product Name</Label>
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input 
+            <Input
               id="searchName"
-              placeholder="Search by name..." 
+              placeholder="Search by name..."
               className="pl-9 h-11"
               value={searchName}
               onChange={(e) => setSearchName(e.target.value)}
@@ -276,10 +276,10 @@ const ProductList = () => {
                       <div className="flex items-center gap-3">
                         <div className="h-12 w-12 rounded-lg border bg-muted flex items-center justify-center overflow-hidden shrink-0 group-hover:scale-110 transition-transform duration-300">
                           {product.poster ? (
-                            <img 
-                              src={product.poster} 
-                              alt={product.name} 
-                              className="h-full w-full object-cover" 
+                            <img
+                              src={product.poster}
+                              alt={product.name}
+                              className="h-full w-full object-cover"
                               onError={(e) => {
                                 (e.target as HTMLImageElement).src = 'https://placehold.co/100x100?text=No+Image';
                               }}
@@ -290,9 +290,9 @@ const ProductList = () => {
                         </div>
                         <div className="flex flex-col">
                           <span className="font-semibold text-sm">{product.name}</span>
-                          <span className="text-[10px] text-primary uppercase tracking-wider font-extrabold">
+                          {/* <span className="text-[10px] text-primary uppercase tracking-wider font-extrabold">
                             {product.salePrice ? `$${Number(product.salePrice).toFixed(2)}` : 'No Price'}
-                          </span>
+                          </span> */}
                         </div>
                       </div>
                     </TableCell>
@@ -302,11 +302,10 @@ const ProductList = () => {
                       </p>
                     </TableCell>
                     <TableCell>
-                      <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-tight ${
-                        product.status === "Active" 
-                          ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400" 
+                      <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-tight ${product.status === "Active"
+                          ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
                           : "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400"
-                      }`}>
+                        }`}>
                         {product.status}
                       </span>
                     </TableCell>
@@ -330,24 +329,24 @@ const ProductList = () => {
                           </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end" className="w-48 p-1 shadow-xl border-muted/20">
-                          <DropdownMenuItem 
+                          <DropdownMenuItem
                             onSelect={(e) => {
                               e.preventDefault();
                               openEdit(product);
-                            }} 
+                            }}
                             className="cursor-pointer gap-2 py-2"
                           >
-                            <Pencil className="h-4 w-4 text-blue-500" /> 
+                            <Pencil className="h-4 w-4 text-blue-500" />
                             <span>Edit Product</span>
                           </DropdownMenuItem>
-                          <DropdownMenuItem 
+                          <DropdownMenuItem
                             onSelect={(e) => {
                               e.preventDefault();
                               openDelete(product);
-                            }} 
+                            }}
                             className="cursor-pointer gap-2 py-2 text-destructive focus:text-destructive focus:bg-destructive/10"
                           >
-                            <Trash2 className="h-4 w-4" /> 
+                            <Trash2 className="h-4 w-4" />
                             <span>Delete Product</span>
                           </DropdownMenuItem>
                         </DropdownMenuContent>
@@ -359,16 +358,16 @@ const ProductList = () => {
             </TableBody>
           </Table>
         </div>
-        
+
         {/* Pagination Info */}
         <div className="p-4 border-t bg-muted/20 flex items-center justify-between">
           <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-[0.2em]">
             {meta ? `Database Total: ${meta.total}` : `Showing ${filteredProducts.length} items`}
           </p>
           <div className="flex items-center gap-3">
-            <Button 
-              variant="outline" 
-              size="sm" 
+            <Button
+              variant="outline"
+              size="sm"
               className="h-8 px-4 text-xs font-semibold uppercase tracking-wider"
               onClick={() => setPage(p => Math.max(1, p - 1))}
               disabled={page === 1}
@@ -378,8 +377,8 @@ const ProductList = () => {
             <div className="flex items-center justify-center min-w-[80px] h-8 bg-muted/30 rounded-md text-[11px] font-bold">
               PAGE {page}
             </div>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="sm"
               className="h-8 px-4 text-xs font-semibold uppercase tracking-wider"
               onClick={() => setPage(p => p + 1)}
@@ -394,7 +393,7 @@ const ProductList = () => {
       {/* Single Controlled Dialog to prevent Overlay Conflicts */}
       <Dialog open={activeModal.isOpen} onOpenChange={(open) => !open && closeModal()}>
         <DialogContent className={`border-none shadow-2xl ${activeModal.type === 'delete' ? 'sm:max-w-[420px]' : 'sm:max-w-[600px]'} max-h-[90vh] overflow-y-auto`}>
-          
+
           {/* Add Product Content */}
           {activeModal.type === 'add' && (
             <>
@@ -407,8 +406,8 @@ const ProductList = () => {
               <div className="grid gap-6 py-6">
                 <div className="space-y-2">
                   <Label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Product Name</Label>
-                  <Input 
-                    placeholder="Enter full product title..." 
+                  <Input
+                    placeholder="Enter full product title..."
                     className="h-11 bg-muted/20 border-muted-foreground/10"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -416,7 +415,7 @@ const ProductList = () => {
                 </div>
                 <div className="space-y-2">
                   <Label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Introduction</Label>
-                  <textarea 
+                  <textarea
                     className="flex min-h-[120px] w-full rounded-md border border-muted-foreground/10 bg-muted/20 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
                     placeholder="Describe the product features..."
                     value={formData.introduction}
@@ -427,8 +426,8 @@ const ProductList = () => {
                   <Label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Product Image</Label>
                   <div className="flex flex-col gap-4">
                     <div className="relative h-11 border-dashed border-2 rounded-md border-muted-foreground/20 hover:border-primary/40 transition-all flex items-center justify-center">
-                      <Input 
-                        type="file" 
+                      <Input
+                        type="file"
                         accept="image/*"
                         className="absolute inset-0 opacity-0 cursor-pointer z-10"
                         onChange={(e) => {
@@ -472,7 +471,7 @@ const ProductList = () => {
               <div className="grid gap-6 py-6">
                 <div className="space-y-2">
                   <Label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Product Name</Label>
-                  <Input 
+                  <Input
                     className="h-11 bg-muted/20 border-muted-foreground/10"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -481,7 +480,7 @@ const ProductList = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="space-y-2">
                     <Label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Price</Label>
-                    <Input 
+                    <Input
                       type="number"
                       className="h-11 bg-muted/20 border-muted-foreground/10"
                       value={formData.price}
@@ -490,7 +489,7 @@ const ProductList = () => {
                   </div>
                   <div className="space-y-2">
                     <Label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Sale Price</Label>
-                    <Input 
+                    <Input
                       type="number"
                       className="h-11 bg-muted/20 border-muted-foreground/10 font-bold text-primary"
                       value={formData.salePrice}
@@ -499,7 +498,7 @@ const ProductList = () => {
                   </div>
                   <div className="space-y-2">
                     <Label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Commission</Label>
-                    <Input 
+                    <Input
                       type="number"
                       className="h-11 bg-muted/20 border-muted-foreground/10"
                       value={formData.commission}
@@ -509,7 +508,7 @@ const ProductList = () => {
                 </div>
                 <div className="space-y-2">
                   <Label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Introduction</Label>
-                  <textarea 
+                  <textarea
                     className="flex min-h-[100px] w-full rounded-md border border-muted-foreground/10 bg-muted/20 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
                     value={formData.introduction}
                     onChange={(e) => setFormData({ ...formData, introduction: e.target.value })}
@@ -518,8 +517,8 @@ const ProductList = () => {
                 <div className="space-y-2">
                   <Label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Update Image (Optional)</Label>
                   <div className="relative h-11 border-dashed border-2 rounded-md border-muted-foreground/20 hover:border-primary/40 transition-all flex items-center justify-center">
-                    <Input 
-                      type="file" 
+                    <Input
+                      type="file"
                       accept="image/*"
                       className="absolute inset-0 opacity-0 cursor-pointer z-10"
                       onChange={(e) => {
