@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { IoHome, IoBarChartSharp } from "react-icons/io5";
 import { IoMdSettings } from "react-icons/io";
-import { FaCashRegister, FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
+import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { TbLayoutDashboardFilled } from "react-icons/tb";
-import { ChevronDown, ChevronRight, Gift } from "lucide-react";
+import { ChevronDown, ChevronRight, } from "lucide-react";
 import { PiHandWithdraw } from "react-icons/pi";
 
 
@@ -163,7 +163,7 @@ const Sidebar = () => {
             </li>
 
             {/* Golden Egg (isolated) */}
-            <li>
+            {/* <li>
               <Link
                 to="/add-bonus"
                 className="flex items-center p-2 rounded-lg hover:bg-white hover:text-black transition-colors"
@@ -171,9 +171,9 @@ const Sidebar = () => {
                 <Gift className="w-5 h-5" />
                 {isOpen && <span className="ml-2 font-medium">Add Bonus</span>}
               </Link>
-            </li>
+            </li> */}
 
-            <li>
+            {/* <li>
               <Link
                 to="/superior-withdraw"
                 className="flex items-center p-2 rounded-lg hover:bg-white hover:text-black transition-colors"
@@ -181,7 +181,7 @@ const Sidebar = () => {
                 <FaCashRegister className="w-5 h-5" />
                 {isOpen && <span className="ml-2 font-medium">Superior Withdraw & Recharge Count</span>}
               </Link>
-            </li>
+            </li> */}
           </ul>
         </TooltipProvider>
       </nav>

@@ -379,9 +379,9 @@ const MemberTable = ({
                                 <TableHead>Invitation Code</TableHead>
                                 <TableHead>Superior ID</TableHead>
                                 <TableHead>Superior Name</TableHead>
-                                <TableHead>Level</TableHead>
+                                {/* <TableHead>Level</TableHead> */}
                                 <TableHead>Operation</TableHead>
-                                <TableHead>User Level</TableHead>
+                                {/* <TableHead>User Level</TableHead> */}
                                 <TableHead>Quantity of Orders</TableHead>
                                 <TableHead>Completed Orders</TableHead>
                                 <TableHead>Out of Balance</TableHead>
@@ -392,7 +392,7 @@ const MemberTable = ({
                                 <TableHead>Total Withdrawal</TableHead>
                                 <TableHead>Order Freezing Amount</TableHead>
                                 <TableHead>Frozen Withdrawal Amount</TableHead>
-                                <TableHead>Online Status</TableHead>
+                                {/* <TableHead>Online Status</TableHead> */}
                                 <TableHead>Freeze Status</TableHead>
                                 <TableHead>Email</TableHead>
                                 <TableHead>Ip Address</TableHead>
@@ -421,7 +421,7 @@ const MemberTable = ({
                                         <TableCell>{user.invitationCode}</TableCell>
                                         <TableCell>{user.superiorUserId}</TableCell>
                                         <TableCell>{user.superiorUserName}</TableCell>
-                                        <TableCell className="text-center font-bold text-blue-400">{user.level}</TableCell>
+                                        {/* <TableCell className="text-center font-bold text-blue-400">{user.level}</TableCell> */}
 
                                         <TableCell>
                                             <div className="flex space-x-1">
@@ -480,7 +480,7 @@ const MemberTable = ({
                                             </div>
                                         </TableCell>
 
-                                        <TableCell>
+                                        {/* <TableCell>
                                             <Button
                                                 variant="outline"
                                                 size="sm"
@@ -502,7 +502,7 @@ const MemberTable = ({
                                                     "Set Round"
                                                 )}
                                             </Button>
-                                        </TableCell>
+                                        </TableCell> */}
                                         <TableCell>{user?.quantityOfOrders}</TableCell>
                                         <TableCell>{user?.completedOrdersCount}</TableCell>
                                         <TableCell className={` ${user?.outOfBalance > 0 ? "text-red-500" : "text-green-500"}`}>{formatMoney(user?.outOfBalance)}</TableCell>
@@ -513,7 +513,7 @@ const MemberTable = ({
                                         <TableCell>{formatMoney(user?.memberTotalWithdrawal)}</TableCell>
                                         <TableCell>{user?.userOrderFreezingAmount?.toLocaleString()}</TableCell>
                                         <TableCell>{user?.amountFrozedInWithdrawal?.toLocaleString()}</TableCell>
-                                        <TableCell>{user?.isOnline ? <span className="text-green-500">🟢 Online</span> : <span className="text-red-500">🔴 Offline</span>}</TableCell>
+                                        {/* <TableCell>{user?.isOnline ? <span className="text-green-500">🟢 Online</span> : <span className="text-red-500">🔴 Offline</span>}</TableCell> */}
                                         <TableCell>{user?.freezeUser ? "Frozen" : "Active"}</TableCell>
                                         <TableCell>{user?.email || "N/A"}</TableCell>
                                         <TableCell>{user?.lastLoginIp || "N/A"}</TableCell>
@@ -574,7 +574,7 @@ const MemberTable = ({
                             Withdrawal prohibited
                         </button>
 
-                        <button
+                        {/* <button
                             className="w-full text-left px-3 py-2 text-sm hover:bg-muted"
                             onClick={() => {
                                 closeDropdown();
@@ -586,9 +586,9 @@ const MemberTable = ({
                             }}
                         >
                             Add Score Amount
-                        </button>
+                        </button> */}
 
-                        <button
+                        {/* <button
                             className="w-full text-left px-3 py-2 text-sm hover:bg-muted rounded-b-md"
                             onClick={() => {
                                 closeDropdown();
@@ -600,7 +600,7 @@ const MemberTable = ({
                             }}
                         >
                             Set the user order amount
-                        </button>
+                        </button> */}
                         <button
                             className="w-full text-left px-3 py-2 text-sm hover:bg-muted rounded-b-md"
                             onClick={() => {
@@ -614,7 +614,7 @@ const MemberTable = ({
                         >
                             Change Password
                         </button>
-                        <button
+                        {/* <button
                             className="w-full text-left px-3 py-2 text-sm hover:bg-muted rounded-b-md"
                             onClick={() => {
                                 closeDropdown();
@@ -626,8 +626,8 @@ const MemberTable = ({
                             }}
                         >
                             Update Level
-                        </button>
-                        <button
+                        </button> */}
+                        {/* <button
                             className="w-full text-left px-3 py-2 text-sm hover:bg-muted rounded-b-md"
                             onClick={() => {
                                 closeDropdown();
@@ -639,7 +639,7 @@ const MemberTable = ({
                             }}
                         >
                             Add Cashback Amount
-                        </button>
+                        </button> */}
                     </div>
                 </>
             )}
