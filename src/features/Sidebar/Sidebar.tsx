@@ -40,7 +40,7 @@ const Sidebar = () => {
       {/* Header */}
       <div className="flex justify-between items-center">
         <h2 className="font-bold text-lg">
-          {isOpen ? "Mercado Livre" : <TbLayoutDashboardFilled className="w-7 h-7" />}
+          {isOpen ? "Zoniva" : <TbLayoutDashboardFilled className="w-7 h-7" />}
         </h2>
         <Button className="ms-1" variant="ghost" size="sm" onClick={toggle}>
           {isOpen ? <FaLongArrowAltLeft /> : <FaLongArrowAltRight />}
