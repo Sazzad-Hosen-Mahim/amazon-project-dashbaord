@@ -57,7 +57,7 @@ const Login = () => {
 
         <input
           type="tel"
-          placeholder="Enter your email"
+          placeholder="Enter your phone"
           value={phoneNumber}
           onChange={(e) => setPhoneNumber(e.target.value)}
           className="w-full px-4 py-2 rounded bg-gray-200 text-black focus:outline-none"
