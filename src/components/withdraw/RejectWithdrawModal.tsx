@@ -67,7 +67,7 @@ const RejectWithdrawModal = ({
                 {data && (
                     <div className="mb-4 p-3 bg-gray-50 dark:bg-primary-dark rounded-md">
                         <p className="text-sm text-white">
-                            Amount: ৳{data.actualAmount}
+                            Amount: ${data.actualAmount}
                         </p>
                     </div>
                 )}

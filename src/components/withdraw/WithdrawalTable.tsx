@@ -129,13 +129,13 @@ const WithdrawTable = ({ data, page, limit, onPageChange, onLimitChange, isLoadi
                                     <TableCell className="font-mono text-xs">
                                         {item.bankAccountNumber || item.mobileBankingAccountNumber || item.withdrawalAddress || "-"}
                                     </TableCell>
-                                    <TableCell>৳{item.withdrawalAmount}</TableCell>
-                                    <TableCell>৳{item.withdrawalFee ?? "-"}</TableCell>
+                                    <TableCell>${item.withdrawalAmount}</TableCell>
+                                    <TableCell>${item.withdrawalFee ?? "-"}</TableCell>
                                     <TableCell>
-                                        ৳{item.actualAmount ?? "-"}
+                                        ${item.actualAmount ?? "-"}
                                     </TableCell>
-                                    <TableCell>৳{item.totalRechargeAmount}</TableCell>
-                                    <TableCell>৳{item.totalWithdrawalAmount}</TableCell>
+                                    <TableCell>${item.totalRechargeAmount}</TableCell>
+                                    <TableCell>${item.totalWithdrawalAmount}</TableCell>
                                     <TableCell>
                                         {format(new Date(item.applicationTime), "PP p")}
                                     </TableCell>
@@ -192,7 +192,7 @@ const WithdrawTable = ({ data, page, limit, onPageChange, onLimitChange, isLoadi
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4 p-4 border-t">
                 <div className="text-sm text-gray-600 dark:text-white">
                     Total withdrawal amount:{" "}
-                    <span className="font-bold text-red-600">৳{totalWithdrawal.toLocaleString()}</span>
+                    <span className="font-bold text-red-600">${totalWithdrawal.toLocaleString()}</span>
                 </div>
 
                 {/* Pagination Controls */}

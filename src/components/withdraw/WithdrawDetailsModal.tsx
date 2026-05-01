@@ -101,7 +101,7 @@ const WithdrawDetailsModal = ({
                             <div className="border rounded-lg p-4 space-y-2 shadow-sm bg-blue-100 dark:bg-secondary">
                                 <h3 className="font-semibold text-gray-700 border-b pb-2 mb-2 dark:text-white">Transaction Info</h3>
                                 <DetailRow label="User ID" value={displayData.userId} />
-                                <DetailRow label="Amount" value={`৳${displayData.amount}`} />
+                                <DetailRow label="Amount" value={`$${displayData.amount}`} />
                                 <DetailRow
                                     label="Status"
                                     value={
@@ -118,15 +118,15 @@ const WithdrawDetailsModal = ({
                                 />
                                 <DetailRow
                                     label="Withdrawal Amount"
-                                    value={`৳${displayData.withdrawalAmount}`}
+                                    value={`$${displayData.withdrawalAmount}`}
                                 />
                                 <DetailRow
                                     label="Total Recharge"
-                                    value={`৳${displayData.totalRechargeAmount}`}
+                                    value={`$${displayData.totalRechargeAmount}`}
                                 />
                                 <DetailRow
                                     label="Total Withdrawal"
-                                    value={`৳${displayData.totalWithdrawalAmount}`}
+                                    value={`$${displayData.totalWithdrawalAmount}`}
                                 />
                                 <DetailRow
                                     label="Application Time"

@@ -172,11 +172,11 @@ const Withdraw = () => {
       {/* Summary Stats */}
       <div className="mb-6 text-lg font-semibold">
         Withdrawal successful:{" "}
-        <span className="text-green-600">৳{successful.toLocaleString()}</span> |
+        <span className="text-green-600">${successful.toLocaleString()}</span> |
         Withdrawal failed:{" "}
-        <span className="text-red-600">৳{failed.toLocaleString()}</span> |
+        <span className="text-red-600">${failed.toLocaleString()}</span> |
         Unprocessed:{" "}
-        <span className="text-orange-600">৳{unprocessed.toLocaleString()}</span>
+        <span className="text-orange-600">${unprocessed.toLocaleString()}</span>
       </div>
 
       {/* Action Buttons */}
